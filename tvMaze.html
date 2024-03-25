@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tv show</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="position-sticky">
+      <nav class="navigation position-fixed">
+        <section class="d-flex flex-column">
+          <div class="my-3 d-flex flex-column align-items-center">
+            <i class="bi bi-house-fill house-fill navIcons"></i>
+            <div class="Home"><h3 class="navText">Home</h3></div>
+          </div>
+
+          <div class="my-3 d-flex flex-column align-items-center">
+            <i class="bi bi-fire fire navIcons"></i>
+            <div class="Trending"><h3 class="navText">Trending</h3></div>
+          </div>
+
+          <div class="my-3 d-flex flex-column align-items-center">
+            <i class="bi bi-suit-heart heart navIcons"></i>
+            <div class="Favourite"><h3 class="navText">Favourite</h3></div>
+          </div>
+
+          <div class="my-3 d-flex flex-column align-items-center">
+            <i class="bi bi-person-circle person navIcons"></i>
+            <div class="Login"><h3 class="navText">Login</h3></div>
+          </div>
+        </section>
+      </nav>
+
+      <section
+        class="topOfPage d-flex justify-content-between p-3 align-items-center"
+      >
+        <div class="containerTvShow">
+          <h1 class="tvShow"><span class="text-info">TV</span>SHOW</h1>
+        </div>
+
+        <div
+          class="rightSection d-flex align-items-center justify-content-between"
+        >
+          <div
+            class="containerOfSearchBox d-flex justify-content-end align-items-center"
+          >
+            <i class="bi bi-search position-absolute searchIcon"></i>
+            <input
+              class="searchBox"
+              type="search"
+              placeholder="   Search movie"
+            />
+          </div>
+          <div class="logo">
+            <i class="bi bi-play-circle-fill text-info fs-1"></i>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section class="mainContainer container">
+        <section class="mainImg">
+          <img
+            src="https://dnm.nflximg.net/api/v6/BvVbc2Wxr2w6QuoANoSpJKEIWjQ/AAAAQWY5K9S1i3yydH_Yxw79TYJ3Q5TPQQJ4JMeB5jdtwbjYcjU6kz6l8CaPxIFIS5JY3m5QIN4aNIF_kvEEJ7VVHecd3DvQqgxaTG7Way-uJjG0DegUwYlVwip4f4DGKUWm3Zw8JImEQzRhAbr9Mc12jGIw4lw.jpg?r=926"
+            class="img-fluid avatarPhoto"
+            alt="Avatar the last air bender"
+          />
+        </section>
+
+        <section class="movieCadr">
+          <div class="divMoviesCadr">Movies</div>
+        </section>
+
+        <section class="containerOfMoviesCard">
+          <section class="moviesCard">
+
+            <div class="card position-reletive d-flex justify-content-end" style="width: 18rem ">
+              <img src="https://static.tvmaze.com/uploads/images/original_untouched/505/1263238.jpg" class="" alt="..." />
+              <div class="card-body position-absolute ">
+                <h3 class="card-title">card title</h3>
+                <h5 class="genre">genre</h5>
+                <h5 class="imdb">9.3</h5>
+              </div>
+            </div>
+
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <footer>
+      <section class="footerSection"></section>
+    </footer>
+
+    <script src="./tvMaze.js"></script>
+  </body>
+</html>

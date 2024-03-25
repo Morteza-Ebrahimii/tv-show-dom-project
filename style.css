@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* background-color: #222831; */
+  color: #eee;
+  /* background-color: #31363f; */
+}
+
+main {
+  background-color: #222831;
+  height: 100em;
+}
+header {
+  background-color: #222831;
+}
+
+
+/*------------ header ------------*/
+
+.navigation {
+ top: 30vh;
+ left: 1em;
+}
+
+header {
+    top: 0px;
+}
+
+/*------------ container of search box ------------*/
+.searchBox {
+  margin-right: 1em;
+}
+
+.searchBox {
+  background-color: #31363f;
+  border: none;
+  border-radius: 15px;
+  padding: 0.3em;
+  width: 15em;
+}
+
+.searchIcon {
+  /* top: 2.1em; */
+  right: 5.5em;
+  background-color: #31363f !important;
+}
+
+/*------------ navigation  -------------*/
+.navIcons{
+    font-size: 2em;
+}
+.navText{
+    font-size: 0.9em;
+}
+
+
+
+/*------------ avatar photo -------------*/
+.avatarPhoto{
+border-radius: 10px;
+}
+
+
+/*------------ movies cadr -------------*/
+
+.divMoviesCadr {
+  margin-top: 1.5em;
+  padding: .5em;
+  font-size: 1.5em;
+  background-color: #31363f;
+  width: 100%;
+  border-radius: 5px;
+}
