@@ -9,22 +9,26 @@
 
 main {
   background-color: #222831;
-  height: 100em;
+  height: auto;
 }
 header {
   background-color: #222831;
+  z-index: 99;
 }
-
+footer {
+  background-color: #222831;
+  height: 5em;
+}
 
 /*------------ header ------------*/
 
 .navigation {
- top: 30vh;
- left: 1em;
+  top: 30vh;
+  left: 1em;
 }
 
 header {
-    top: 0px;
+  top: 0px;
 }
 
 /*------------ container of search box ------------*/
@@ -47,28 +51,42 @@ header {
 }
 
 /*------------ navigation  -------------*/
-.navIcons{
-    font-size: 2em;
+.navIcons {
+  font-size: 2em;
 }
-.navText{
-    font-size: 0.9em;
+.navText {
+  font-size: 0.9em;
 }
-
-
 
 /*------------ avatar photo -------------*/
-.avatarPhoto{
-border-radius: 10px;
+.avatarPhoto {
+  border-radius: 10px;
 }
-
 
 /*------------ movies cadr -------------*/
 
 .divMoviesCadr {
   margin-top: 1.5em;
-  padding: .5em;
+  padding: 0.5em;
   font-size: 1.5em;
   background-color: #31363f;
   width: 100%;
   border-radius: 5px;
+}
+
+/* <!----------- movies cards -----------> */
+.card {
+  border: none;
+  background-color: #222831;
+}
+
+.card:hover {
+  .card-title {
+    font-size: 2em;
+    transition: all 0.3s;
+  }
+
+  .img-cards {
+    opacity: 0.5;
+  }
 }
