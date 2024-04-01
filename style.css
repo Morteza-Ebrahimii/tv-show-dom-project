@@ -90,3 +90,7 @@ header {
     opacity: 0.5;
   }
 }
+
+.img-cards {
+  min-height: -webkit-fill-available;;
+}
