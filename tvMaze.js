@@ -1,10 +1,10 @@
+const cards = document.querySelectorAll(".card");
 const valueOfInput = document.querySelector(".searchBox");
 const searchIcon = document.querySelector(".searchIcon");
 const imgCArd = document.querySelectorAll(".img-cards");
 const cardTitle = document.querySelectorAll(".card-title");
 const genre = document.querySelectorAll(".genre");
 const imdb = document.querySelectorAll(".imdb");
-
 
 // -------------- basic card in the page ----------------
 const getDataShows = async () => {
@@ -15,7 +15,7 @@ const getDataShows = async () => {
 
 getDataShows()
   .then((res) => res)
-  .then((data) => showsData(data))
+  .then((data) => (showsData(data), showSession(data)))
   .catch((er) => console.log(er));
 
 let counter = true;
@@ -33,11 +33,16 @@ const showsData = (data) => {
         } else {
           imdb[j].innerHTML = "Movie information not found";
         }
+
+        // cards[j].addEventListener("click", (e) => {
+        //   // console.log(data[j].url);
+        //   const url = data[j].url;
+        //   window.open(url, "_blank");
+        // });
       }
     }
   }
 };
-
 
 // -------------- with search card in the page ----------------
 valueOfInput.addEventListener("keyup", (event) => {
@@ -70,7 +75,6 @@ const infoOfQuery = (data) => {
         imgCArd[j].src = shows.image.medium;
         cardTitle[j].innerHTML = shows.name;
         genre[j].innerHTML = shows.genres.join().replaceAll(",", " | ");
-        console.log(shows);
       }
 
       if (shows.rating.average !== null) {
@@ -78,6 +82,26 @@ const infoOfQuery = (data) => {
       } else {
         imdb[j].innerHTML = "Movie information not found";
       }
+
+      if (valueOfInput) {
+        cards[j].addEventListener("click", (e) => {
+          const url = shows.url;
+          window.open(url, "_blank");
+        });
+      }
     }
   }
 };
+
+// -------------- To display any movie session ----------------
+// imgCArd.forEach(el => {
+//   // console.dir(el);
+
+// });
+
+const getDatasession = async () => {
+  const res = await fetch(`https://api.tvmaze.com/shows/${id}/episodes`);
+};
+function showSession(data) {
+  // console.log(data);
+}
