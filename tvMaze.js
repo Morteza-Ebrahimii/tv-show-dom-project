@@ -15,7 +15,7 @@ const getDataShows = async () => {
 
 getDataShows()
   .then((res) => res)
-  .then((data) => (showsData(data), showSession(data)))
+  .then((data) => showsData(data))
   .catch((er) => console.log(er));
 
 let counter = true;
@@ -23,6 +23,12 @@ let counter = true;
 const showsData = (data) => {
   if (counter) {
     for (let i = 0; i < 10; i++) {
+      // for show details of each movies for basic movies in the page
+      cards[i].addEventListener("click", (e) => {
+        const url = data[i].url;
+        window.open(url, "_blank");
+      });
+
       for (let j = 0; j < imgCArd.length; j++) {
         imgCArd[j].src = data[j].image.original;
         cardTitle[j].innerHTML = data[j].name;
@@ -33,12 +39,6 @@ const showsData = (data) => {
         } else {
           imdb[j].innerHTML = "Movie information not found";
         }
-
-        // cards[j].addEventListener("click", (e) => {
-        //   // console.log(data[j].url);
-        //   const url = data[j].url;
-        //   window.open(url, "_blank");
-        // });
       }
     }
   }
@@ -67,8 +67,14 @@ valueOfInput.addEventListener("keyup", (event) => {
 
 const infoOfQuery = (data) => {
   for (let i = 0; i < data.length; i++) {
+    
+    // for show details of each movies when use search box
+    cards[i].addEventListener("click", (e) => {
+      const url = data[i].show.url;
+      window.open(url, "_blank");
+    });
+
     for (let j = 0; j < imgCArd.length; j++) {
-      // imgCArd[j] = ""
       const shows = data[j].show;
       if (data[j].show.image !== null) {
         imgCArd[j].removeAttribute("src");
@@ -82,26 +88,6 @@ const infoOfQuery = (data) => {
       } else {
         imdb[j].innerHTML = "Movie information not found";
       }
-
-      if (valueOfInput) {
-        cards[j].addEventListener("click", (e) => {
-          const url = shows.url;
-          window.open(url, "_blank");
-        });
-      }
     }
   }
 };
-
-// -------------- To display any movie session ----------------
-// imgCArd.forEach(el => {
-//   // console.dir(el);
-
-// });
-
-const getDatasession = async () => {
-  const res = await fetch(`https://api.tvmaze.com/shows/${id}/episodes`);
-};
-function showSession(data) {
-  // console.log(data);
-}
