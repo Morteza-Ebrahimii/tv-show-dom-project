@@ -1,10 +1,6 @@
-const cards = document.querySelectorAll(".card");
 const valueOfInput = document.querySelector(".searchBox");
 const searchIcon = document.querySelector(".searchIcon");
-const imgCArd = document.querySelectorAll(".img-cards");
-const cardTitle = document.querySelectorAll(".card-title");
-const genre = document.querySelectorAll(".genre");
-const imdb = document.querySelectorAll(".imdb");
+const moviesCard = document.querySelector(".moviesCard");
 
 // -------------- basic card in the page ----------------
 const getDataShows = async () => {
@@ -15,11 +11,36 @@ const getDataShows = async () => {
 
 getDataShows()
   .then((res) => res)
-  .then((data) => getData(data))
+  .then((data) =>
+    getData([
+      data[3],
+      data[5],
+      data[9],
+      data[27],
+      data[161],
+      data[60],
+      data[59],
+      data[70],
+      data[79],
+      data[161],
+    ])
+  )
   .catch((er) => console.log(er));
 
 const getData = (data) => {
   data.forEach((el) => {
-    console.log(el);
+    // console.log(el);
+
+    // create div in section of movie
+    const div = document.createElement("div");
+    div.setAttribute(
+      "class",
+      "card position-reletive d-flex justify-content-end"
+    );
+    div.style.width = "18rem"
+    moviesCard.append(div);
+
+    // create img in div 
+    // cotinue here
   });
 };
