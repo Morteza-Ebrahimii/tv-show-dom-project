@@ -17,7 +17,7 @@ getDataShows()
       data[5],
       data[9],
       data[27],
-      data[161],
+      data[169],
       data[60],
       data[59],
       data[70],
@@ -37,10 +37,35 @@ const getData = (data) => {
       "class",
       "card position-reletive d-flex justify-content-end"
     );
-    div.style.width = "18rem"
+    div.style.width = "18rem";
     moviesCard.append(div);
 
-    // create img in div 
-    // cotinue here
+    // create img in div
+    const img = document.createElement("img");
+    img.setAttribute("class", "img-cards");
+    img.setAttribute("src", el.image.original);
+
+    //create div for infomation in image cards
+    const divInfo = document.createElement("div");
+    divInfo.setAttribute("class", "card-body position-absolute mb-4");
+
+    const title = document.createElement("h3");
+    title.setAttribute("class", "card-title");
+    title.textContent = el.name;
+
+    const genre = document.createElement("h5");
+    genre.setAttribute("class", "genre fs-5");
+    genre.textContent = el.genres.join().replaceAll(",", " | ");
+
+    const imdb = document.createElement("h5");
+    imdb.setAttribute("class", "imdb");
+    imdb.textContent = el.rating.average;
+
+    div.append(img, divInfo);
+    divInfo.append(title, genre, imdb);
+
+
   });
 };
+
+
