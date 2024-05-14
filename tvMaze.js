@@ -64,8 +64,31 @@ const getData = (data) => {
     div.append(img, divInfo);
     divInfo.append(title, genre, imdb);
 
+    const findDataSearch = () => {
+      // is for search movies in the page
+      valueOfInput.addEventListener("keyup", (event) => {
+        event.preventDefault();
 
+        // console.log(el);
+        if (!el.name.toLowerCase().includes(valueOfInput.value.toLowerCase())) {
+          // console.log(div);
+          div.setAttribute(
+            "class",
+            "card position-reletive justify-content-end"
+          );
+          div.style.display = "none";
+        } else {
+          // console.log(div);
+          div.style.display = "flex";
+        }
+
+        if (!event.value) {
+          searchIcon.style.visibility = "hidden";
+        }
+      });
+    };
+    findDataSearch();
+
+    
   });
 };
-
-
