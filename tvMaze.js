@@ -89,6 +89,15 @@ const getData = (data) => {
     };
     findDataSearch();
 
-    
+    const moveToInfoMovies = () => {
+      div.addEventListener("click", () => {
+        // console.log(el.url);
+        const url = el.url;
+        window.open(url, '_blank')
+
+
+      });
+    };
+    moveToInfoMovies();
   });
 };
